@@ -12,14 +12,28 @@
   color: #4a102a;
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: letter-spacing 0.3s;
+}
+.name:hover {
+  letter-spacing: 12px;
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
 .about {
   background-color: #205781;
   padding: 20px 30px;
   margin: 10px;
   max-width: 1530px;
   border-radius: 10px;
+  transition: color 0.5s ease;
 }
 
 .about h2 {
@@ -38,10 +52,20 @@
   padding-left: 5px;
 }
 
+.about:hover {
+  border: 2px solid brown;
+  box-shadow: #4a102a;
+  transform: rotate(-2deg);
+  color: #4a102a;
+}
+
 .skills {
   background-color: #205781;
-  padding: 20px 30px;
-  margin: 10px;
+  padding: 10px;
+  padding-bottom: 10px;
+  height: 350px;
+  margin: 5px;
+  width: fit-content;
   border-radius: 12px;
   border: 3px solid #205781;
   box-sizing: border-box;
@@ -57,11 +81,18 @@
 }
 
 .skills ul {
-  font-size: 20px;
+  font-size: 24px;
   list-style: 1.6;
   text-indent: 15px;
-  padding-left: 5px;
-  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-bottom: 28px;
+  line-height: 1.2;
+}
+
+.skills:hover {
+  border: 2px solid brown;
+  box-shadow: #4a102a;
+  transform: rotate(2deg);
 }
 
 .contact {
@@ -72,6 +103,12 @@
   border: 3px solid #205781;
   box-sizing: border-box;
   text-align: center;
+  transition: 0.8s ease;
+}
+.contact:hover {
+  transform: rotate(1deg);
+  color: #4a102a;
+  border: 2px solid #4a102a;
 }
 
 .contact h2 {
@@ -107,6 +144,7 @@
   background-color: red;
   color: white;
   border: 2px solid #98d2c0;
+  transform: rotate(1deg);
 }
 
 .certificate {
@@ -117,9 +155,15 @@
   border: 3px solid #205781;
   box-sizing: border-box;
   text-align: center;
+  transition: 0.8s ease-in-out;
 }
-
-.certificate h2 {
+.certificate:hover {
+  border: 2px solid brown;
+  box-shadow: #4a102a;
+  transform: rotate(1deg);
+  color: #4a102a;
+}
+/*.certificate h2 {
   margin-top: 5px;
   font-weight: bold;
   font-family: "poppins", sans-serif;
@@ -128,6 +172,12 @@
   padding: 7px;
   padding-bottom: 10px;
   margin-bottom: 10px;
+}
+
+.certificate img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 .certificate img {
   margin: 15px 15px;
@@ -139,10 +189,12 @@
   font-size: 22px;
   text-decoration: underline;
   padding-bottom: 10px;
-}
+}*/
 
 .nav {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
 .nav a {
@@ -161,4 +213,97 @@
   background-color: white;
   color: #007bff;
   border: 2px solid #007bff;
+  transform: scale(1.2);
+  transition-delay: 0.2s;
+}
+
+.certificate h2 {
+  margin-top: 5px;
+  font-weight: bold;
+  font-family: "poppins", sans-serif;
+  font-size: 35px;
+  color: #8e1616;
+  padding: 7px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 90px;
+  max-width: 1530px;
+  border: 2px solid brown;
+  margin: 0 auto;
+  padding: 25px;
+  padding-top: 50px;
+}
+
+.image-grid img {
+  width: 100%;
+  background-color: wheat;
+  height: auto;
+  border: 2px solid brown;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 30px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skills {
+    width: 100%;
+  }
+  .about {
+    width: 100%;
+  }
+  .contact button {
+    font-size: 15px;
+    width: auto;
+  }
+}
+@media (max-width: 768px) {
+  .name {
+    font-size: 40px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .skills {
+    width: 100%;
+  }
+  .about {
+    width: 100%;
+  }
 }
